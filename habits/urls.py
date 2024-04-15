@@ -1,12 +1,12 @@
 from django.urls import path
 from habits.apps import HabitsConfig
-from habits.views import CreateHabitsAPIView, ListHabitsAPIView
+from habits.views import CreateHabitsAPIView, DetailHabitsAPIView, UserListHabitsAPIView, DeleteHabitsAPIView, \
+    UpdateHabitsAPIView, PublicListHabitsAPIView
 
 app_name = HabitsConfig.name
 
 urlpatterns = [
     path('habits/create/', CreateHabitsAPIView.as_view(), name='create'),
-    path('habits/list/', ListHabitsAPIView.as_view(), name='list'),
     path('habits/detail/<int:pk>/', DetailHabitsAPIView.as_view(), name='detail'),
     path('habits/update/<int:pk>/', UpdateHabitsAPIView.as_view(), name='update'),
     path('habits/delete/<int:pk>/', DeleteHabitsAPIView.as_view(), name='delete'),

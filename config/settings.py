@@ -198,8 +198,8 @@ CELERY_TASK_TRACK_STARTED = True
 
 CELERY_BEAT_SCHEDULE = {
     'task': {
-        'task': 'path.to.your.task',
-        'schedule': timedelta(minutes=10),
+        'task': 'habits.tasks.send_telegram_notification',
+        'schedule': timedelta(minutes=1),
     },
 }
 

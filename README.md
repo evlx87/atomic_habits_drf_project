@@ -25,3 +25,33 @@
 
     http://127.0.0.1:8000/swagger/
     http://127.0.0.1:8000/redoc/
+
+### Настройки для развертывания и администрирования проекта с помощью Docker
+для создания образа используйте команду:
+```bash
+docker compose build
+```
+для запуска проекта используйте команду:
+```bash
+docker compose up
+```
+чтобы посмотреть статус проекта:
+```bash
+docker compose ps
+```
+чтобы остановить проект используйте команду:
+```bash
+docker compose down
+```
+чтобы посмотреть логи проекта:
+```bash
+docker compose logs
+```
+попасть в базу данных PostgreSQL можно следующим образом:
+```bash
+docker compose exec db psql -U {DB_USER=из .env} -d {DB_NAME=из .env}
+```
+создать суперпользователя можно следующим образом:
+```bash
+docker compose exec app python manage.py create_su
+```
